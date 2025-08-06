@@ -1,4 +1,10 @@
-# MikuGG
+# Interactive LLM (MikuGG Fork)
+
+> **Note**: This is a personal fork of [MikuGG](https://github.com/miku-gg/miku) by Mikerive.
+> 
+> **Original Repository**: https://github.com/miku-gg/miku
+> 
+> **This Fork**: https://github.com/Mikerive/interactive-llm
 
 MikuGG is a generative visual novel platform. This is the open source interactor code for the website miku.gg. You can set up miku locally or develop features using this respository instructions.
 
