@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  services:
+    build:
+      context: .
+      dockerfile: apps/services/Dockerfile
+    container_name: mikugg_services
+    env_file:
+      - .env
+    environment:
+      - SERVICES_PORT=8484
+      - MODEL_API_URL=${MODEL_API_URL}
+      - MODEL_API_KEY=${MODEL_API_KEY}
+      - MODEL_API_MODEL=${MODEL_API_MODEL}
+      - ASSISTANT_API_ENDPOINT=${ASSISTANT_API_ENDPOINT}
+      - ASSISTANT_API_KEY=${ASSISTANT_API_KEY}
+      - ASSISTANT_API_MODEL=${ASSISTANT_API_MODEL}
+      - MODEL_SERVER_SETTINGS_URL=${MODEL_SERVER_SETTINGS_URL}
+      - MODEL_SERVER_SETTINGS_TOKEN=${MODEL_SERVER_SETTINGS_TOKEN}
+    ports:
+      - "8484:8484"
+
+  bot-directory:
+    build:
+      context: .
+      dockerfile: apps/bot-directory/Dockerfile
+    container_name: mikugg_bot_directory
+    env_file:
+      - .env
+    environment:
+      - BOT_DIRECTORY_PORT=8585
+      - PORT=8585
+    ports:
+      - "8585:8585"
+
+  interactor:
+    build:
+      context: .
+      dockerfile: apps/interactor/Dockerfile
+    container_name: mikugg_interactor
+    env_file:
+      - .env
+    environment:
+      - VITE_SERVICES_ENDPOINT=http://services:8484
+      - VITE_STAGE=production
+    ports:
+      - "5173:80"
+
+  bot-translator:
+    build:
+      context: .
+      dockerfile: apps/bot-translator/Dockerfile
+    container_name: mikugg_bot_translator
+    env_file:
+      - .env
+    environment:
+      - VITE_SERVICES_ENDPOINT=http://services:8484
+      - VITE_STAGE=production
+    ports:
+      - "5174:80"
+
+  novel-builder:
+    build:
+      context: .
+      dockerfile: apps/novel-builder/Dockerfile
+    container_name: mikugg_novel_builder
+    env_file:
+      - .env
+    environment:
+      - VITE_SERVICES_ENDPOINT=http://services:8484
+      - VITE_STAGE=production
+    ports:
+      - "5175:80"
+
+volumes:
+  # anonymous volumes for container node_modules directories (no host sharing)
+  node_modules:

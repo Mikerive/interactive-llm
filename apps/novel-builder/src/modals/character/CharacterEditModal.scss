@@ -1,0 +1,16 @@
+.CharacterEditModal {
+  max-width: 1200px !important;
+  width: 100% !important;
+  box-shadow: 0px 0px 20px 0px rgb(205 95 234) !important;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+// add media query for 580px
+@media (max-width: 981px) {
+  .CharacterEditModal {
+    padding: 8px !important;
+  }
+}

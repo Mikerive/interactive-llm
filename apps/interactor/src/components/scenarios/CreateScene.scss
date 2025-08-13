@@ -1,0 +1,234 @@
+@import '../../variables';
+
+.CreateScene {
+  &__background__button,
+  &__characters__item {
+    height: 100px;
+    border-radius: 10px;
+    transition: all 0.2s ease-out;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    color: white;
+    background-color: $background-1;
+    outline: none;
+
+    &:hover {
+      border: 2px solid #aaa1ff;
+    }
+  }
+
+  &__characters__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__selector {
+    &__group {
+      margin-top: 20px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 10px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__item {
+      background-size: cover;
+      background-position: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      transition: all 0.2s ease-out;
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $background-1;
+      overflow: hidden;
+      position: relative;
+
+      img,
+      video {
+        height: 100%;
+      }
+
+      &-name {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $background-1;
+        border-bottom-left-radius: 10px;
+        font-size: 0.7rem;
+        padding: 0.1rem 0.3rem;
+        padding-bottom: 0.2rem;
+      }
+
+      &:hover {
+        border: 2px solid #aaa1ff;
+        opacity: 1;
+      }
+
+      &--selected {
+        border: 2px solid #aaa1ff;
+        opacity: 1;
+      }
+
+      &--upload {
+        background-color: rgba(white, 0.1);
+        .dragAndDropImages {
+          margin-bottom: 0;
+
+          &__dropzone {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+          }
+          svg {
+            width: 32px;
+            height: 32px;
+
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &--loading {
+        img {
+          opacity: 0.2;
+        }
+
+        .Loader {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  &__form {
+    padding: 0 15px;
+  }
+
+  &__music,
+  &__prompt,
+  &__characters,
+  &__background {
+    margin-top: 15px;
+
+    &__title {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__background__button {
+    width: 100%;
+  }
+
+  &__characters__list {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__characters__item {
+    width: 100px;
+
+    img,
+    video {
+      height: 100%;
+    }
+  }
+
+  &__prompt {
+    .Input__textArea {
+      height: 100px;
+    }
+  }
+
+  &__actions {
+    margin-top: 10px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__background-search {
+    margin-top: 20px;
+
+    &__input {
+      position: relative;
+      margin-bottom: 20px;
+
+      .Loader {
+        position: absolute;
+        top: 10.5px;
+        left: initial;
+        right: 14px;
+      }
+    }
+
+    &__load-more {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__generator {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__header-coins {
+      color: $color-gold;
+    }
+
+    &__text-area {
+      margin: 30px 0;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: right;
+    }
+
+    &__buy-more {
+      display: inline-flex;
+      margin-right: 15px;
+      color: $text-3;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        color: $text-2;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.CharacterDescriptionEdit {
+  padding: 1rem;
+
+  &__public-specs {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__public-specs-text {
+    width: 100%;
+  }
+
+  &__base-text {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    flex: 3;
+  }
+  &__version {
+    flex: 2;
+  }
+  &__creator {
+    flex: 3;
+  }
+
+  &__short-description {
+    margin-bottom: 20px;
+  }
+
+  &__personality,
+  &__description,
+  &__examples {
+    margin-bottom: 20px;
+
+    &__label {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+      justify-content: space-between;
+
+      &-group {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      & button {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        gap: 0.1rem;
+        background: linear-gradient(90deg, #9747ff, transparent) #ff4e67;
+        border-radius: 0.5rem;
+        transition: ease-in-out 0.2s;
+
+        &:hover {
+          background-color: #9747ff;
+        }
+      }
+    }
+  }
+
+  &__personality {
+    margin-bottom: 20px;
+  }
+
+  .Input__textArea {
+    height: 4em;
+  }
+}
+.disabled {
+  & button {
+    background-color: #808080;
+    background: #808080;
+    color: #515050;
+    border-color: #515050;
+    cursor: default;
+    &:hover {
+      background-color: #808080;
+    }
+  }
+}
+
+@media (max-width: 981px) {
+  .CharacterDescriptionEdit {
+    &__base-text {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 521px) {
+  .CharacterDescriptionEdit {
+    &__public-specs {
+      flex-direction: column;
+    }
+  }
+}

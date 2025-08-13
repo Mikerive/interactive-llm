@@ -1,0 +1,147 @@
+@import '../variables';
+
+.Carousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .hidden {
+    display: none;
+  }
+
+  &__leftScrollButton,
+  &__rightScrollButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 50%;
+    border: unset;
+
+    color: #6c7293;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.5s;
+      box-shadow: unset;
+      filter: drop-shadow(0 0 2px $secondary-color);
+    }
+  }
+
+  &__leftScrollButton {
+    transform: rotate(180deg);
+  }
+
+  &__itemContainer {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 1rem;
+    gap: 2rem;
+    margin: 0 1rem;
+
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.imageContainer {
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0;
+
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+
+    background: transparent;
+    color: $text-1;
+    border: none;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $primary-color;
+      text-decoration-thickness: 2px;
+
+      .Carousel__image {
+        outline: 1px solid $primary-color;
+      }
+    }
+  }
+
+  & .selectedItem {
+    text-decoration: underline;
+    text-decoration-color: $purple-1;
+    text-decoration-thickness: 2px;
+
+    .Carousel__image {
+      outline: 1px solid $purple-1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-width: 9.25rem;
+    min-height: 9.25rem;
+    max-height: 9.25rem;
+    max-width: 9.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 1rem;
+
+    &Content {
+      height: 8.5rem;
+      width: auto;
+    }
+
+    &Title {
+      position: absolute;
+      top: 1rem;
+    }
+  }
+
+  &--small {
+    .Carousel__image {
+      min-width: 4.25rem;
+      min-height: 4.25rem;
+      max-height: 4.25rem;
+      max-width: 4.25rem;
+      border-radius: 1rem;
+
+      &Content {
+        height: 3.5rem;
+      }
+    }
+
+    .imageContainer {
+      gap: 1rem;
+    }
+  }
+
+  & .hidden {
+    display: noen;
+  }
+}

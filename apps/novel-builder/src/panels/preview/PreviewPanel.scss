@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.PreviewPanel {
+  &__iframe-container {
+    height: 60vh;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__modal-content {
+    font-size: 1em;
+    line-height: 1rem;
+    font-weight: 400;
+  }
+
+  &__modal-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $text-1;
+  }
+
+  &__options {
+    list-style: none;
+    padding: 0 1rem;
+    margin-top: 25px;
+  }
+
+  &__option-description {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: $text-2;
+  }
+
+  &__buttons-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    & > button {
+      width: 200px;
+    }
+  }
+
+  &__build {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
